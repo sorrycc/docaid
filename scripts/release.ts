@@ -13,13 +13,7 @@ import getGitRepoInfo from 'git-repo-info';
   const newVersion = require(path.join(pkgPath, 'package.json')).version;
   await $`cd ${pkgPath} && npm publish`;
 
-  // modify root pkg
-  const rootPkgPath = path.join(__dirname, '..', 'package.json');
-  const rootPkg = require(rootPkgPath);
-  rootPkg.devDependencies[pkgName] = newVersion;
-  fs.writeFileSync(rootPkgPath, JSON.stringify(rootPkg, null, 2));
-  await $`pnpm i`;
-
+  // commit and tag and push
   await $`git commit -am "release: ${pkgName}@${newVersion}"`;
   await $`git tag ${pkgName}v${newVersion}`;
   await $`git push origin ${branch} --tags`;
