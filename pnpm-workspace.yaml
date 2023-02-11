@@ -1,0 +1,4 @@
+packages:
+  - 'docaid'
+  - 'umi-plugin-docaid'
+  - 'create-docaid'
