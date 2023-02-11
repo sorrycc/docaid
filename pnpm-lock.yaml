@@ -14,6 +14,7 @@ importers:
       prettier-plugin-organize-imports: ^1.1.1
       typescript: ^4
       umi: ^4.0.47
+      umi-plugin-docaid: 0.0.8
       zx: ^4.2.0
     devDependencies:
       '@types/node': 15.14.9
@@ -26,6 +27,7 @@ importers:
       prettier-plugin-organize-imports: 1.1.1_silln3pw57har7jydmecgzoypa
       typescript: 4.9.5
       umi: 4.0.51_h5cxdrkau5e3tqarlzj2hoxf5i
+      umi-plugin-docaid: link:umi-plugin-docaid
       zx: 4.3.0
 
   create-docaid:
