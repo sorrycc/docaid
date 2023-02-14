@@ -26,6 +26,9 @@ export default defineConfig({
       { title: 'rss', href: '/rss.xml' },
     ],
     copyright: 'Docaid',
+    utterances: {
+      repo: 'leeguooooo/blogComment',
+    },
     rss: {
       posts: {
         default: true,
