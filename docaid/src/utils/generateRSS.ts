@@ -34,7 +34,6 @@ export function generateRSS(opts: {
       ...item,
       id: item.id || item.link,
       description: item.description || item.title,
-      content: item.html,
     };
     if (!item.author && !item.authors && opts.feedOpts.author) {
       newItem.author = opts.feedOpts.author;
