@@ -114,8 +114,7 @@ export async function buildDoc(root: string, dir: string, opts: IOpts) {
         const ret = {
           title: doc.title,
           link: `${opts.config.siteUrl}${dir}/${doc.file.replace(/\.md$/, '')}`,
-          // TODO: support full content by default
-          content: '',
+          content: doc.html,
           date: new Date(doc.publishedAt),
         };
         return rssOpts.transform ? rssOpts.transform(ret, { doc }) : ret;
