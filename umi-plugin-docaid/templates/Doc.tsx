@@ -1,13 +1,44 @@
 import { Helmet } from 'react-helmet';
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Doc } from 'docaid/client';
-import { useDocAidConfig, useDocAidTheme } from 'umi';
+import { styled, useDocAidConfig, useDocAidTheme } from 'umi';
 import { useDoc } from './useDoc';
 
+const Utterances = styled.div`
+  margin-top: 120px;
+`;
+
 export default () => {
+  const utterancesRef = useRef<HTMLDivElement>(null);
   const config = useDocAidConfig();
   const theme = useDocAidTheme();
   const postQuery = useDoc<any>();
+
+  useEffect(() => {
+    if (!postQuery.isSuccess || !config?.utterances) return;
+
+    const {
+      repo = '',
+      issueTerm = 'pathname',
+      theme = 'github-light',
+      crossorigin = 'anonymous',
+      label = '💬',
+    } = config.utterances;
+
+    const script = document.createElement('script');
+    script.src = 'https://utteranc.es/client.js';
+    script.setAttribute('repo', repo);
+    script.setAttribute('issue-term', issueTerm);
+    script.setAttribute('theme', theme);
+    script.setAttribute('crossorigin', crossorigin);
+    script.setAttribute('label', label);
+    script.async = true;
+
+    if (utterancesRef.current) {
+      utterancesRef.current.appendChild(script);
+    }
+  }, [config, utterancesRef.current, postQuery]);
+
   if (postQuery.isLoading) return <p>loading...</p>;
   const {
     metaTitle,
@@ -33,6 +64,7 @@ export default () => {
 <p>注意：本文带有大量链接，推荐点击「查看原文」在语雀上查看。</p>
   ` + html;
   }
+
   return (
     <>
       <Helmet>
@@ -59,6 +91,7 @@ export default () => {
           Doc: theme.DocWrapper,
         }}
       />
+      <Utterances ref={utterancesRef} />
     </>
   );
 };
