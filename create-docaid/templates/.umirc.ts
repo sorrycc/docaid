@@ -23,6 +23,9 @@ export default defineConfig({
       { title: 'RSS', href: '/rss.xml' },
     ],
     copyright: 'Docaid',
+    utterances: {
+      githubRepo: '<your-github-repo>',
+    },
     rss: {
       posts: {
         default: true,
