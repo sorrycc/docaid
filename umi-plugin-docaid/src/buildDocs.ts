@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import { parseDocs, generateRSS } from 'docaid';
+import { parseDocs, generateRSS } from 'leeguoo-docaid';
 import { chokidar, winPath } from 'umi/plugin-utils';
 
 type IRSS = {

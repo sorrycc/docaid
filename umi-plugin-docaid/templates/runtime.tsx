@@ -1,5 +1,5 @@
 import { createGlobalStyle, useDocAidTheme } from 'umi';
-import { globalCSS } from 'docaid/client';
+import { globalCSS } from 'leeguoo-docaid/client';
 
 export function rootContainer(container: any) {
   const theme = useDocAidTheme();

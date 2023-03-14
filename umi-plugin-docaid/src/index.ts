@@ -1,6 +1,6 @@
 import { IApi } from 'umi';
 import { lodash } from 'umi/plugin-utils';
-import { parseDoc } from 'docaid';
+import { parseDoc } from 'leeguoo-docaid';
 import path from 'path';
 import fs from 'fs';
 import { buildDocs } from './buildDocs';

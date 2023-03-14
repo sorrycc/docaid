@@ -1,6 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { toHtml, Doc } from 'docaid/client';
+import { toHtml, Doc } from 'leeguoo-docaid/client';
 import { useDocAidConfig, useLocation } from 'umi';
 // @ts-ignore
 import singleDocMap from './singleDocMap';

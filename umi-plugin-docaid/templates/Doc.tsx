@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet';
 import React, { useEffect, useRef } from 'react';
-import { Doc } from 'docaid/client';
+import { Doc } from 'leeguoo-docaid/client';
 import { styled, useDocAidConfig, useDocAidTheme } from 'umi';
 import { useDoc } from './useDoc';
 

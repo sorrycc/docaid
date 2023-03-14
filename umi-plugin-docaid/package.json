@@ -1,6 +1,6 @@
 {
-  "name": "umi-plugin-docaid",
-  "version": "0.0.8",
+  "name": "umi-plugin-leeguoo-docaid",
+  "version": "0.0.9",
   "description": "",
   "homepage": "https://github.com/sorrycc/docaid/tree/master/umi-plugin-docaid#readme",
   "bugs": "https://github.com/sorrycc/docaid/issues",
@@ -21,7 +21,7 @@
     "react-helmet": "^6.1.0"
   },
   "peerDependencies": {
-    "docaid": "^0.0.2",
+    "leeguoo-docaid": "^0.0.2",
     "umi": "4"
   },
   "devDependencies": {
