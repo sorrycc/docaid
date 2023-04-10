@@ -44,8 +44,8 @@ export default () => {
           balance: true,
         }}
         publishedAt={publishedAt}
-        headImg={{
-          src: titleImage!,
+        headImg={titleImage && {
+          src: titleImage,
           alt: titleImageCaption,
         }}
         toc={{
